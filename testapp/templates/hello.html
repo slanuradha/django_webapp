@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %} hello {% endblock %}
+{% block content %}
+<h3>Hello Django..</h3>
+
+<h3>{{ name }} </h3>
+<h3>{{ email }}</h3>
+<h3>{{ l1.3}}</h3>
+<h3>{{address}}</h3>
+
+{% for i in l1 %}
+<h3>{{ i }}</h3>
+{% endfor %}
+
+{% if name == '' %}
+<h3>empty..</h3>
+{% else %}
+<h3>{{ name }} </h3>
+{% endif %}
+
+{% endblock %}

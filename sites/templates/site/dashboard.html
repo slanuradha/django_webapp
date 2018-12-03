@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% if request.user.username %}
+<h3>UserName:{{ request.user.username }}</h3>
+<h3>City:{{ request.session.city }}</h3>
+<h3>Address:{{ request.session.address }}</h3>
+
+<h4><a href="/logout"> logout({{ request.user.username }})</a> </h4>
+{% else %}
+<h4><a href="/login">Login in again </a> </h4>
+{% endif %}
+{% endblock %}

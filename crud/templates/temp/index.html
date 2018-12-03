@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>CollageName</th>
+        <th>Email ID</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+      <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+          <td>{{ i.address }}</td>
+          <td>{{ i.city }}</td>
+          <td>
+              <span class="btn btn-info btn-xs"><a href="/view?id={{i.id}}">view</a></span>
+              <span class="btn btn-primary btn-xs"><a href="update?id={{i.id}}">Update</a></span>
+              <span class="btn btn-warning btn-xs"><a onclick="return deleteItem()" href="/delete?id={{i.id}}">Delete</a></span>
+
+          </td>
+
+
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+<script>
+    function deleteItem(){
+        if(confirm('Are you sure to delete this item?')){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+{% endblock %}
