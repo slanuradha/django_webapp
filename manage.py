@@ -2,6 +2,7 @@
 import os
 import sys
 
+print("Hello")
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "webapp.settings")
     try:
